@@ -35,12 +35,6 @@ const login = async (req, res) => {
   try {
     const existingUser = await userRepository.login({ email, password });
     console.log("🚀 ========= existingUser:", existingUser);
-    if (existingUser == null) {
-      res.status(200).json({
-        message: "Login successful",
-        data: existingUser,
-      });
-    }
     res.status(200).json({
       message: "Login successful",
       data: existingUser,

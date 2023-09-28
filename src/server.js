@@ -1,7 +1,12 @@
 import express from "express";
 import * as dotenv from "dotenv";
 
-import { courseRouter, userRouter } from "./routes/index.js";
+import {
+  courseRouter,
+  userRouter,
+  songRouter,
+  studentRouter,
+} from "./routes/index.js";
 import connectDB from "./database/database.js";
 
 const app = express();
@@ -11,6 +16,9 @@ const port = process.env.PORT || 3000;
 
 app.use("/users", userRouter);
 app.use("/courses", courseRouter);
+app.use("/song", songRouter);
+app.use("/students", studentRouter);
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
