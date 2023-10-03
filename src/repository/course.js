@@ -1,5 +1,6 @@
 import Course from "../model/Course.js";
 const getAllCourses = async () => {
+  console.log("data", await Course.find({}));
   return await Course.find({});
 };
 const createCourse = async ({ name, level, videoId, author, description }) => {
